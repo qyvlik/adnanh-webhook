@@ -1,5 +1,7 @@
 FROM alpine:3.19.1
 
+LABEL org.opencontainers.image.source https://github.com/qyvlik/adnanh-webhook
+
 ARG APK_REGISTRY=mirrors.ustc.edu.cn
 ARG HTTP_PROXY
 
