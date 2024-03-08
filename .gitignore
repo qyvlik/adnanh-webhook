@@ -1,0 +1,15 @@
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### OSX ###
+
+*.DS_Store
+
+### vscode
+.vscode
+
+### env file
+*.env
