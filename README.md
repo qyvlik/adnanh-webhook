@@ -17,8 +17,3 @@ docker build \
   --progress=plain \
   .
 ```
-
-docker build \
--t adnanh-webhook \
---progress=plain \
-.
