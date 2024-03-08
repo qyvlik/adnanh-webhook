@@ -1,14 +1,14 @@
 name: ci
 
-on:
- push:
-   tags:
-     - '*'           # Push events to every tag not containing /
-
 #on:
-#  push:
-#    branches:
-#      - 'main'
+# push:
+#   tags:
+#     - '*'           # Push events to every tag not containing /
+
+on:
+  push:
+    branches:
+      - 'main'
 
 jobs:
   docker:
