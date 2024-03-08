@@ -1,0 +1,47 @@
+name: ci
+
+#on:
+# push:
+#   tags:
+#     - '*'           # Push events to every tag not containing /
+
+on:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
+      -
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      -
+        name: Login to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GHCR_TOKEN }}
+
+      -
+        id: repository_name
+        uses: ASzc/change-string-case-action@v5
+        with:
+          string: ghcr.io/${{ github.repository }}:${{github.ref_name}}
+
+      -
+        id: docker_build_push
+        uses: docker/build-push-action@v5
+        with:
+          build-args: |
+            APK_REGISTRY=dl-cdn.alpinelinux.org
+          push: true
+          tags: |
+            ${{ steps.repository_name.outputs.lowercase }}

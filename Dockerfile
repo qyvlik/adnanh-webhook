@@ -3,7 +3,10 @@ FROM alpine:3.19.1
 ARG APK_REGISTRY=mirrors.ustc.edu.cn
 ARG HTTP_PROXY
 
-RUN sed -i "s/dl-cdn.alpinelinux.org/${APK_REGISTRY}/g" /etc/apk/repositories
+RUN sed -i "s/dl-cdn.alpinelinux.org/${APK_REGISTRY}/g" /etc/apk/repositories && \
+    apk update
+
+RUN apk add --no-cache bash==5.2.21-r0
 
 COPY ./root/adnanh-webhook /adnanh-webhook
 
