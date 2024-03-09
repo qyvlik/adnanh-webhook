@@ -17,9 +17,3 @@ docker build \
   --progress=plain \
   .
 ```
-
-docker build \
--t adnanh-webhook \
---build-arg HTTP_PROXY=socks5://192.168.51.71:1080 \
---progress=plain \
-.
