@@ -1,8 +1,9 @@
 FROM alpine:3.19.1
 
-LABEL org.opencontainers.image.source https://github.com/qyvlik/adnanh-webhook
+LABEL org.opencontainers.image.source=https://github.com/qyvlik/adnanh-webhook
 
 ARG APK_REGISTRY=mirrors.ustc.edu.cn
+ARG DOCKER_COMPOSE_VERSION=v2.24.7
 ARG HTTP_PROXY
 
 RUN sed -i "s/dl-cdn.alpinelinux.org/${APK_REGISTRY}/g" /etc/apk/repositories && \
