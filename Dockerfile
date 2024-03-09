@@ -32,5 +32,3 @@ chmod 755 /usr/libexec/docker/cli-plugins/docker-compose
 EOR
 
 VOLUME /root/.docker
-
-ENTRYPOINT /usr/bin/webhook
