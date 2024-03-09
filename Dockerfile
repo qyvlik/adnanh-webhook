@@ -10,7 +10,8 @@ RUN sed -i "s/dl-cdn.alpinelinux.org/${APK_REGISTRY}/g" /etc/apk/repositories &&
     apk add --no-cache bash==5.2.21-r0 \
         curl==8.5.0-r0 \
         webhook==2.8.1-r5 \
-        docker==25.0.3-r1
+        docker==25.0.3-r1 \
+        aws-cli==2.13.25-r0
 
 RUN <<EOR
 if [ -n "$HTTP_PROXY" ]
