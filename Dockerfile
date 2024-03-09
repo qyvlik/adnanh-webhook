@@ -28,6 +28,7 @@ else
     -SL https://github.com/docker/compose/releases/download/$DOCKER_COMPOSE_VERSION/docker-compose-linux-x86_64 \
     -o /usr/libexec/docker/cli-plugins/docker-compose
 fi
+chmod 755 /usr/libexec/docker/cli-plugins/docker-compose
 EOR
 
 VOLUME /root/.docker
