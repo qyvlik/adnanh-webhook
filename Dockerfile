@@ -29,4 +29,6 @@ else
 fi
 EOR
 
+VOLUME /root/.docker
+
 ENTRYPOINT /usr/bin/webhook
