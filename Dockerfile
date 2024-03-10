@@ -9,7 +9,7 @@ ARG HTTP_PROXY
 RUN sed -i "s/dl-cdn.alpinelinux.org/${APK_REGISTRY}/g" /etc/apk/repositories && \
     apk update && \
     apk add --no-cache bash==5.2.21-r0 \
-        git==2.44.0-r0 \
+        git==2.43.0-r0 \
         curl==8.5.0-r0 \
         webhook==2.8.1-r5 \
         docker==25.0.3-r1 \
